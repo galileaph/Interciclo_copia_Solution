@@ -1,0 +1,219 @@
+﻿@model api.digitalsoftec.net.Model.BusinessLayerAdminEmpresasDTOEmpresaDTO
+
+@{
+    ViewData["Title"] = "Editar Empresas";
+}
+<!DOCTYPE html>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<div class="card m-3">
+    <div class="card-body">
+        <h5 class="card-title">Empresas - Edición</h5>
+        <form asp-action="Edit" method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="row mb-3">
+                <label asp-for="empresa_id" class="col-sm-2 col-form-label">ID</label>
+                <div class="col-sm-4">
+                <input asp-for="empresa_id" class="form-control"/>
+                <span asp-validation-for="empresa_id" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <label asp-for="empresa_codigo_interno" class="col-sm-2 col-form-label">Código Interno</label>
+                <div class="col-sm-4">
+                    <input asp-for="empresa_codigo_interno" class="form-control" />
+                    <span asp-validation-for="empresa_codigo_interno" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <label asp-for="empresa_nro_identificacion" class="col-sm-2 col-form-label">Nro. Identifación</label>
+                <div class="col-sm-4">
+                    <input asp-for="empresa_nro_identificacion" class="form-control" />
+                    <span asp-validation-for="empresa_nro_identificacion" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <label asp-for="tipo_identificacion_id" class="col-sm-2 col-form-label">Tipo Identificación:</label>
+                <div class="col-sm-4">
+                    <select asp-for="tipo_identificacion_id" asp-items="ViewBag.TiposIdentificacion" class="form-select"></select>
+                    <span asp-validation-for="tipo_identificacion_id" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <label asp-for="empresa_razon_social" class="col-sm-2 col-form-label">Razón Social</label>
+                <div class="col-sm-4">
+                    <input asp-for="empresa_razon_social" class="form-control" />
+                    <span asp-validation-for="empresa_razon_social" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <label asp-for="empresa_nombre_comercial" class="col-sm-2 col-form-label">Nombre Comercial</label>
+                <div class="col-sm-4">
+                    <input asp-for="empresa_nombre_comercial" class="form-control" />
+                    <span asp-validation-for="empresa_nombre_comercial" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <label asp-for="empresa_activa" class="col-sm-2 col-form-label">Empresa activa</label>
+                <div class="col-sm-4">
+                    <input asp-for="empresa_activa" class="form-control">
+                    <span asp-validation-for="empresa_activa" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <label asp-for="empresa_direccion_principal" class="col-sm-2 col-form-label">Dirección Principal</label>
+                <div class="col-sm-4">
+                    <input asp-for="empresa_direccion_principal" class="form-control">
+                    <span asp-validation-for="empresa_direccion_principal" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <label asp-for="empresa_parroquia_id" class="col-sm-2 col-form-label">Parroquia</label>
+                <div class="col-sm-4">
+                    <select asp-for="empresa_parroquia_id" asp-items="ViewBag.Parroquia" class="form-select"></select>
+                    <span asp-validation-for="empresa_parroquia_id" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <label asp-for="empresa_regimen_tributario_id" class="col-sm-2 col-form-label">Régimen Tributario</label>
+                <div class="col-sm-4">
+                    <select asp-for="empresa_regimen_tributario_id" asp-items="ViewBag.RegimenTributario" class="form-select"></select>
+                    <span asp-validation-for="empresa_regimen_tributario_id" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <label asp-for="empresa_telefono" class="col-sm-2 col-form-label">Teléfono</label>
+                <div class="col-sm-4">
+                    <input asp-for="empresa_telefono" class="form-control">
+                    <span asp-validation-for="empresa_telefono" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <label asp-for="empresa_movil" class="col-sm-2 col-form-label">Móvil</label>
+                <div class="col-sm-4">
+                    <input asp-for="empresa_movil" class="form-control">
+                    <span asp-validation-for="empresa_movil" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <label class="col-sm-2 col-form-label"></label>
+                <div class="col-sm-10">
+                    <button type="submit" class="btn btn-outline-primary" id="Guardar">Guardar</button>
+                    <a asp-action="list" class="btn btn-outline-secondary">Regresar</a>
+                </div>
+
+            </div>
+
+
+            @*<div class="form-group">
+                <label asp-for="empresa_telefono" class="control-label"></label>
+                <input asp-for="empresa_telefono" class="form-control" />
+                <span asp-validation-for="empresa_telefono" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="empresa_movil" class="control-label"></label>
+                <input asp-for="empresa_movil" class="form-control" />
+                <span asp-validation-for="empresa_movil" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="empresa_direccion_ref" class="control-label"></label>
+                <input asp-for="empresa_direccion_ref" class="form-control" />
+                <span asp-validation-for="empresa_direccion_ref" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="empresa_email" class="control-label"></label>
+                <input asp-for="empresa_email" class="form-control" />
+                <span asp-validation-for="empresa_email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="empresa_site_url" class="control-label"></label>
+                <input asp-for="empresa_site_url" class="form-control" />
+                <span asp-validation-for="empresa_site_url" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="empresa_slogan" class="control-label"></label>
+                <input asp-for="empresa_slogan" class="form-control" />
+                <span asp-validation-for="empresa_slogan" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="empresa_contribuyente_especial" class="control-label"></label>
+                <input asp-for="empresa_contribuyente_especial" class="form-control" />
+                <span asp-validation-for="empresa_contribuyente_especial" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="empresa_obligado_contabilidad" class="control-label"></label>
+                <input asp-for="empresa_obligado_contabilidad" class="form-control" />
+                <span asp-validation-for="empresa_obligado_contabilidad" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="empresa_realiza_ats" class="control-label"></label>
+                <input asp-for="empresa_realiza_ats" class="form-control" />
+                <span asp-validation-for="empresa_realiza_ats" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="empresa_agente_retencion" class="control-label"></label>
+                <input asp-for="empresa_agente_retencion" class="form-control" />
+                <span asp-validation-for="empresa_agente_retencion" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="empresa_logo" class="control-label"></label>
+                <input asp-for="empresa_logo" class="form-control" />
+                <span asp-validation-for="empresa_logo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="empresa_rep_legal_id" class="control-label"></label>
+                <input asp-for="empresa_rep_legal_id" class="form-control" />
+                <span asp-validation-for="empresa_rep_legal_id" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="empresa_rep_legal" class="control-label"></label>
+                <input asp-for="empresa_rep_legal" class="form-control" />
+                <span asp-validation-for="empresa_rep_legal" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="empresa_conatdor_id" class="control-label"></label>
+                <input asp-for="empresa_conatdor_id" class="form-control" />
+                <span asp-validation-for="empresa_conatdor_id" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="empresa_contador_name" class="control-label"></label>
+                <input asp-for="empresa_contador_name" class="form-control" />
+                <span asp-validation-for="empresa_contador_name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="empresa_tipo_agente_retencion_id" class="control-label"></label>
+                <input asp-for="empresa_tipo_agente_retencion_id" class="form-control" />
+                <span asp-validation-for="empresa_tipo_agente_retencion_id" class="text-danger"></span>
+            </div>
+*@            
+        </form>
+    </div>
+</div>
+
+@if (TempData["SuccessMessage"] != null)
+{
+    <div id="successMessage" class="alert alert-success">
+        @TempData["SuccessMessage"]
+    </div>
+}
+
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        var btnSubmit = document.getElementById('Guardar');
+        var modal = document.getElementById('loadingModal');
+
+        btnSubmit.addEventListener('click', function () {
+            modal.style.display = 'block';
+        });
+    }); 
+
+
+</script>

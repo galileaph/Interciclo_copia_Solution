@@ -1,0 +1,372 @@
+﻿@model api.digitalsoftec.net.Model.BusinessLayerVentasClientesDTOClienteDTO
+
+@{
+    ViewData["Title"] = "Editar Clientes";
+}
+<!DOCTYPE html>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<div class="card m-3">
+    <div class="card-body">
+        <h5 class="card-title">Clientes - Edición</h5>
+        <form asp-action="Edit" method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="row mb-3">
+                <label asp-for="persona_id" class="col-sm-2 col-form-label">ID</label>
+                <div class="col-sm-4">
+                    <input asp-for="persona_id" class="form-control" />
+                    <span asp-validation-for="persona_id" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <label asp-for="tipo_identificacion_id" class="col-sm-2 col-form-label">Tipo Identificación</label>
+                <div class="col-sm-4">
+                    <input asp-for="tipo_identificacion_id" class="form-control" />
+                    <span asp-validation-for="tipo_identificacion_id" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <label asp-for="persona_nro_identificacion" class="col-sm-2 col-form-label">Nro. Identifación</label>
+                <div class="col-sm-4">
+                    <input asp-for="persona_nro_identificacion" class="form-control" />
+                    <span asp-validation-for="persona_nro_identificacion" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <label asp-for="persona_apellidos" class="col-sm-2 col-form-label">Apellidos</label>
+                <div class="col-sm-4">
+                    <input asp-for="persona_apellidos" class="form-control" />
+                    <span asp-validation-for="persona_apellidos" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <label asp-for="persona_nombres" class="col-sm-2 col-form-label">Nombres</label>
+                <div class="col-sm-4">
+                    <input asp-for="persona_nombres" class="form-control" />
+                    <span asp-validation-for="persona_nombres" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <label asp-for="persona_fecha_nacimiento" class="col-sm-2 col-form-label">Fecha de Nacimiento</label>
+                <div class="col-sm-4">
+                    <input asp-for="persona_fecha_nacimiento" class="form-control" />
+                    <span asp-validation-for="persona_fecha_nacimiento" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <label asp-for="genero_id" class="col-sm-2 col-form-label">Género</label>
+                <div class="col-sm-4">
+                    <input asp-for="genero_id" class="form-control" />
+                    <span asp-validation-for="genero_id" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <label asp-for="tipo_persona_id" class="col-sm-2 col-form-label">Tipo de Persona</label>
+                <div class="col-sm-4">
+                    <select asp-for="tipo_persona_id" asp-items="ViewBag.TipoPersona" class="form-select"></select>
+                    <span asp-validation-for="tipo_persona_id" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <label asp-for="estado_civil_id" class="col-sm-2 col-form-label">Estado Civil</label>
+                <div class="col-sm-4">
+                    <input asp-for="estado_civil_id" class="form-control" />
+                    <span asp-validation-for="estado_civil_id" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <label asp-for="cliente_direccion" class="col-sm-2 col-form-label">Dirección</label>
+                <div class="col-sm-4">
+                    <input asp-for="cliente_direccion" class="form-control">
+                    <span asp-validation-for="cliente_direccion" class="text-danger"></span>
+                </div>
+            </div>
+            
+            <div class="row mb-3">
+                <label asp-for="cliente_direccion_ref" class="col-sm-2 col-form-label">Dirección Referencia</label>
+                <div class="col-sm-4">
+                    <input asp-for="cliente_direccion_ref" class="form-control">
+                    <span asp-validation-for="cliente_direccion_ref" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <label asp-for="cliente_telefono" class="col-sm-2 col-form-label">Teléfono</label>
+                <div class="col-sm-4">
+                    <input asp-for="cliente_telefono" class="form-control">
+                    <span asp-validation-for="cliente_telefono" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <label asp-for="cliente_movil" class="col-sm-2 col-form-label">Móvil</label>
+                <div class="col-sm-4">
+                    <input asp-for="cliente_movil" class="form-control">
+                    <span asp-validation-for="cliente_movil" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <label asp-for="cliente_email" class="col-sm-2 col-form-label">Email</label>
+                <div class="col-sm-4">
+                    <input asp-for="cliente_email" class="form-control">
+                    <span asp-validation-for="cliente_email" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <label asp-for="is_externa" class="col-sm-2 col-form-label">IS Externa</label>
+                <div class="col-sm-4">
+                    <input asp-for="is_externa" class="form-control" />
+                    <span asp-validation-for="is_externa" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <label asp-for="cliente_codigo_interno" class="col-sm-2 col-form-label">Código Interno</label>
+                <div class="col-sm-4">
+                    <input asp-for="cliente_codigo_interno" class="form-control" />
+                    <span asp-validation-for="cliente_codigo_interno" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <label asp-for="cliente_razon_social" class="col-sm-2 col-form-label">Razón Social</label>
+                <div class="col-sm-4">
+                    <input asp-for="cliente_razon_social" class="form-control" />
+                    <span asp-validation-for="cliente_razon_social" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <label asp-for="cliente_nombre_comercial" class="col-sm-2 col-form-label">Nombre Comercial</label>
+                <div class="col-sm-4">
+                    <input asp-for="cliente_nombre_comercial" class="form-control" />
+                    <span asp-validation-for="cliente_nombre_comercial" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <label asp-for="cliente_user_id" class="col-sm-2 col-form-label">Usuario ID</label>
+                <div class="col-sm-4">
+                    <input asp-for="cliente_user_id" class="form-control" />
+                    <span asp-validation-for="cliente_user_id" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <label asp-for="cliente_password" class="col-sm-2 col-form-label">Contraseña</label>
+                <div class="col-sm-4">
+                    <input asp-for="cliente_password" class="form-control" />
+                    <span asp-validation-for="cliente_password" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <label asp-for="cliente_parte_relacionada" class="col-sm-2 col-form-label">Parte Relacionada</label>
+                <div class="col-sm-4">
+                    <input asp-for="cliente_parte_relacionada" class="form-control" />
+                    <span asp-validation-for="cliente_parte_relacionada" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <label asp-for="cliente_realiza_retenciones" class="col-sm-2 col-form-label">Realiza detenciones</label>
+                <div class="col-sm-4">
+                    <input asp-for="cliente_realiza_retenciones" class="form-control" />
+                    <span asp-validation-for="cliente_realiza_retenciones" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <label asp-for="cliente_contribuyente_especial" class="col-sm-2 col-form-label">Contribuyente especial</label>
+                <div class="col-sm-4">
+                    <input asp-for="cliente_contribuyente_especial" class="form-control" />
+                    <span asp-validation-for="cliente_contribuyente_especial" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <label asp-for="cliente_obligado_contabilidad" class="col-sm-2 col-form-label">Contabilidad</label>
+                <div class="col-sm-4">
+                    <input asp-for="cliente_obligado_contabilidad" class="form-control" />
+                    <span asp-validation-for="cliente_obligado_contabilidad" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <label asp-for="cliente_tarifa_id" class="col-sm-2 col-form-label">Tarifa</label>
+                <div class="col-sm-4">
+                    <input asp-for="cliente_tarifa_id" class="form-control" />
+                    <span asp-validation-for="cliente_tarifa_id" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <label asp-for="cliente_tipo_venta_id" class="col-sm-2 col-form-label">Tipo de Venta</label>
+                <div class="col-sm-4">
+                    <input asp-for="cliente_tipo_venta_id" class="form-control" />
+                    <span asp-validation-for="cliente_tipo_venta_id" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <label asp-for="cliente_porcentaje_descuento" class="col-sm-2 col-form-label">Porcentaje de descuento</label>
+                <div class="col-sm-4">
+                    <input asp-for="cliente_porcentaje_descuento" class="form-control" />
+                    <span asp-validation-for="cliente_porcentaje_descuento" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <label asp-for="cliente_dias_credito" class="col-sm-2 col-form-label">Días de crédito</label>
+                <div class="col-sm-4">
+                    <input asp-for="cliente_dias_credito" class="form-control" />
+                    <span asp-validation-for="cliente_dias_credito" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <label asp-for="cliente_cupo_credito" class="col-sm-2 col-form-label">Cupo de crédito</label>
+                <div class="col-sm-4">
+                    <input asp-for="cliente_cupo_credito" class="form-control" />
+                    <span asp-validation-for="cliente_cupo_credito" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <label asp-for="cliente_latitud" class="col-sm-2 col-form-label">Latitud</label>
+                <div class="col-sm-4">
+                    <input asp-for="cliente_latitud" class="form-control" />
+                    <span asp-validation-for="cliente_latitud" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <label asp-for="cliente_longitud" class="col-sm-2 col-form-label">Longitud</label>
+                <div class="col-sm-4">
+                    <input asp-for="cliente_longitud" class="form-control" />
+                    <span asp-validation-for="cliente_longitud" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <label asp-for="zona_cliente_id" class="col-sm-2 col-form-label">Zona</label>
+                <div class="col-sm-4">
+                    <input asp-for="zona_cliente_id" class="form-control" />
+                    <span asp-validation-for="zona_cliente_id" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <label asp-for="grupo_cliente_id" class="col-sm-2 col-form-label">Grupo</label>
+                <div class="col-sm-4">
+                    <input asp-for="grupo_cliente_id" class="form-control" />
+                    <span asp-validation-for="grupo_cliente_id" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <label asp-for="ruta_cliente_id" class="col-sm-2 col-form-label">Ruta</label>
+                <div class="col-sm-4">
+                    <input asp-for="ruta_cliente_id" class="form-control" />
+                    <span asp-validation-for="ruta_cliente_id" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <label asp-for="cliente_vendedor_id" class="col-sm-2 col-form-label">Vendedor</label>
+                <div class="col-sm-4">
+                    <input asp-for="cliente_vendedor_id" class="form-control" />
+                    <span asp-validation-for="cliente_vendedor_id" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <label asp-for="cliente_cobrador_id" class="col-sm-2 col-form-label">Cobrador</label>
+                <div class="col-sm-4">
+                    <input asp-for="cliente_cobrador_id" class="form-control" />
+                    <span asp-validation-for="cliente_cobrador_id" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <label asp-for="cliente_fecha_registro" class="col-sm-2 col-form-label">Fecha de registro</label>
+                <div class="col-sm-4">
+                    <input asp-for="cliente_fecha_registro" class="form-control" type="date" />
+                    <span asp-validation-for="cliente_fecha_registro" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <label asp-for="cliente_fecha_ultima_modificacion" class="col-sm-2 col-form-label">Última modificación</label>
+                <div class="col-sm-4">
+                    <input asp-for="cliente_fecha_ultima_modificacion" class="form-control" type="date" />
+                    <span asp-validation-for="cliente_fecha_ultima_modificacion" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <label asp-for="cliente_observaciones" class="col-sm-2 col-form-label">Observaciones</label>
+                <div class="col-sm-4">
+                    <input asp-for="cliente_observaciones" class="form-control" />
+                    <span asp-validation-for="cliente_observaciones" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <label asp-for="cliente_user_registra_id" class="col-sm-2 col-form-label">Usuario que registra</label>
+                <div class="col-sm-4">
+                    <input asp-for="cliente_user_registra_id" class="form-control" />
+                    <span asp-validation-for="cliente_user_registra_id" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <label asp-for="empresa_id" class="col-sm-2 col-form-label">Empresa</label>
+                <div class="col-sm-4">
+                    <input asp-for="empresa_id" class="form-control" />
+                    <span asp-validation-for="empresa_id" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <label class="col-sm-2 col-form-label"></label>
+                <div class="col-sm-10">
+                    <button type="submit" class="btn btn-outline-primary" id="Guardar">Guardar</button>
+                    <a asp-action="list" class="btn btn-outline-secondary">Regresar</a>
+                </div>
+
+            </div>
+
+        </form>
+    </div>
+</div>
+
+@if (TempData["SuccessMessage"] != null)
+{
+    <div id="successMessage" class="alert alert-success">
+        @TempData["SuccessMessage"]
+    </div>
+}
+
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        var btnSubmit = document.getElementById('Guardar');
+        var modal = document.getElementById('loadingModal');
+
+        btnSubmit.addEventListener('click', function () {
+            modal.style.display = 'block';
+        });
+    });
+
+
+</script>
